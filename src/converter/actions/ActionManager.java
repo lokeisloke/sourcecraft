@@ -1,6 +1,5 @@
 package converter.actions;
 
-import basic.Loggger;
 import basic.Tuple;
 import converter.actions.actions.NoAction;
 import converter.mapper.Mapper;
@@ -31,7 +30,8 @@ public class ActionManager {
 
 	public void add(Mapper context, Position position, Block block) {
 		Action action;
-		if (block == null || block.getName().equals("minecraft:barrier") ) {
+		//if (block == null || block.getName().equals("minecraft:barrier") ) {
+		if (block == null) {
 			action = NoAction.INSTANCE;
 		} else {
 			action = this.getAction(block);

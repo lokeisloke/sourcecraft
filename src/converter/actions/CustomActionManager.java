@@ -40,6 +40,7 @@ public class CustomActionManager extends ActionManager {
 		this.actions.put(Material.air, NoAction.INSTANCE);
 		this.actions.put(Material.cave_air, NoAction.INSTANCE);
 		this.actions.put(Material.void_air, NoAction.INSTANCE);
+		this.actions.put(Material.barrier, NoAction.INSTANCE);
 
 		for (Material m : new Material[] { Material.fern, Material.grass, Material.dandelion, Material.poppy,
 				Material.brown_mushroom, Material.red_mushroom, Material.redstone_dust, Material.wheat,
