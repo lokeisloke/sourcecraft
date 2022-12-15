@@ -96,11 +96,13 @@ public class Skins {
 		this.textureScale = ((double) scale) / ((double) textureSizeNew);
 		this.folder = folder + "/";
 		this.skins = new BlockMap<Skin>().setDefault(new Skin(DEFAULT_TEXTURE, this.textureScale));
+
 		// set based on matching texture name
 		for (Texture texture : Texture.values()) {
 			this.put(texture);
 		}
 
+		/*
 		// set based on common
 		for (Material material : Material.values()) {
 			String name = material.name();
@@ -164,10 +166,10 @@ public class Skins {
 				this.createSkinTopBottom(Texture.dirt_podzol_side, Texture.dirt_podzol_top, Texture.dirt));
 		this.put(Material.mycelium,
 				this.createSkinTopBottom(Texture.mycelium_side, Texture.mycelium_top, Texture.dirt));
-		this.put(Material.grass_path,
-				this.createSkinTopBottom(Texture.grass_path_side, Texture.grass_path_top, Texture.dirt));
+		this.put(Material.dirt_path,
+				this.createSkinTopBottom(Texture.dirt_path_side, Texture.dirt_path_top, Texture.dirt));
 
-		this.put(Material.packed_ice, Texture.ice_packed);
+		this.put(Material.packed_ice, Texture.packed_ice);
 		this.put(Material.snow_block, Texture.snow);
 
 		this.put(Material.chiseled_stone_bricks, Texture.stonebrick_carved);
@@ -248,6 +250,7 @@ public class Skins {
 		this.put(Material.lantern, Texture.magma);
 		this.put(Material.blast_furnace, Texture.furnace_front_on);
 		// this.put(Material.torch, Texture.magma);
+		*/
 
 		// special
 		this.skins.put(Blocks.get("sourcecraft:ramp"), PLAYER_CLIP);

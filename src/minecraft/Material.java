@@ -6,8 +6,18 @@ import java.util.function.Supplier;
 import periphery.Minecraft;
 
 public enum Material implements Supplier<Block> {
-	// https://gaming.stackexchange.com/questions/391989/where-can-i-quickly-get-a-list-of-all-minecraft-blocks
-	// https://github.com/Radvylf/minecraft-lists/blob/master/1.17/1.17.1/blocks.txt
+	/*
+		https://gaming.stackexchange.com/questions/391989/where-can-i-quickly-get-a-list-of-all-minecraft-blocks
+		https://github.com/Radvylf/minecraft-lists/blob/master/1.17/1.17.1/blocks.txt
+		grass_path -> dirt_path
+		block_of_* -> *_block
+		hay_bale -> hay_block
+		jigsaw_block -> jigsaw
+		redstone_comparator -> comparator
+		redstone_dust -> redstone_wire
+		redstone_repeater -> repeater
+		vines -> vine
+	*/
 	acacia_button,
 	acacia_door,
 	acacia_fence,

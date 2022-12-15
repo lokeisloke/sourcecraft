@@ -43,7 +43,7 @@ public class CustomActionManager extends ActionManager {
 		this.actions.put(Material.barrier, NoAction.INSTANCE);
 
 		for (Material m : new Material[] { Material.fern, Material.grass, Material.dandelion, Material.poppy,
-				Material.brown_mushroom, Material.red_mushroom, Material.redstone_dust, Material.wheat,
+				Material.brown_mushroom, Material.red_mushroom, Material.redstone_wire, Material.wheat,
 				Material.oak_door, Material.ladder, Material.rail, Material.oak_wall_sign, Material.lever,
 				Material.stone_pressure_plate, Material.iron_door, Material.oak_pressure_plate, Material.sugar_cane,
 				Material.sunflower, Material.cobweb, Material.detector_rail, Material.detector_rail, Material.fire,
@@ -76,7 +76,7 @@ public class CustomActionManager extends ActionManager {
 		this.actions.put(Material.iron_bars, new Pane());
 		this.actions.put(Material.chest, new Chest());
 		this.actions.put(Material._button, new Button());
-		this.actions.put(Material.grass_path, new GrassPath());
+		this.actions.put(Material.dirt_path, new GrassPath());
 
 //		// tf2
 //		this.actions.put(Material.grass, new TallGrassTf2());
