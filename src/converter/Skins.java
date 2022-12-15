@@ -102,104 +102,84 @@ public class Skins {
 			this.put(texture);
 		}
 
-		/*
 		// set based on common
 		for (Material material : Material.values()) {
 			String name = material.name();
-			if (name.endsWith("_log")) { // except dark oak
-				String textureName = "log_" + name.substring(0, name.length() - "_log".length());
-				this.put(material, this.createSkin(() -> textureName, () -> textureName + "_top"));
-			} else if (name.endsWith("_trapdoor")) {
-				this.put(material, name);
-			} else if (name.endsWith("_stained_glass")) {
-				this.put(material, "glass_" + name.substring(0, name.length() - "_stained_glass".length()));
+			if (name.endsWith("_log")) {
+				this.put(material, this.createSkin(() -> name, () -> name + "_top"));
+			} else if (name.endsWith("_wood")) {
+				this.put(material, name.substring(0, name.length() - "_wood".length()) + "_log");
 			} else if (name.endsWith("_carpet")) {
-				this.put(material, "wool_" + name.substring(0, name.length() - "_carpet".length()));
+				this.put(material, name.substring(0, name.length() - "_carpet".length()) + "_wool");
+			//} else if (name.endsWith("_pressure_plate")) {
+				//this.put(material, name.substring(0, name.length() - "_pressure_plate".length()) + "_wool");
 			} else if (name.equals("chest")) {
 				this.put(material, this.createSkinTopFront(() -> "chest_side", () -> "chest_top", () -> "chest_front",
 						Orientation.NORTH));
-			} else if (this.putPrefixMadeSuffix(material, Material._leaves)) {
-			} else if (this.putPrefixMadeSuffix(material, Material._planks)) {
-			} else if (this.putPrefixMadeSuffix(material, Material._wool)) {
-			} else if (this.putPrefixMadeSuffix(material, Material._concrete)) {
-			} else if (this.putPrefixMadeSuffix(material, Material._concrete_powder)) {
-			} else if (this.putPrefixMadeSuffix(material, Material._terracotta)) {
-			} else if (this.putPrefixMadeSuffix(material, Material._glazed_terracotta)) {
 			}
 		}
-		// exceptions
-		this.put(Material.dark_oak_log, this.createSkin(Texture.log_big_oak, Texture.log_big_oak_top));
-		this.put(Material.dark_oak_leaves, Texture.leaves_big_oak);
-		this.put(Material.dark_oak_planks, Texture.planks_big_oak);
 
 		// material-prefixes
-		this.put(Material.andesite, Texture.stone_andesite);
-		this.put(Material.diorite, Texture.stone_diorite);
-		this.put(Material.granite, Texture.stone_granite);
+		this.put(Material.brick_, Texture.bricks);
+		this.put(Material.petrified_oak_, Texture.oak_planks);
+		this.put(Material.infested_stone_bricks, Texture.stone_bricks);
+
+		this.put(Material.end_stone_brick_, Texture.end_stone_bricks);
+		this.put(Material.mossy_stone_brick_, Texture.mossy_stone_bricks);
+		this.put(Material.prismarine_brick_, Texture.prismarine_bricks);
+		this.put(Material.nether_brick_, Texture.nether_bricks);
+		this.put(Material.stone_brick_, Texture.stone_bricks);
+		this.put(Material.oak_, Texture.oak_planks);
+		this.put(Material.dark_oak_, Texture.dark_oak_planks);
+		this.put(Material.spruce_, Texture.spruce_planks);
+		this.put(Material.birch_, Texture.birch_planks);
+		this.put(Material.acacia_, Texture.acacia_planks);
+		this.put(Material.jungle_, Texture.jungle_planks);
+		this.put(Material.purpur_, Texture.purpur_block);
+		this.put(Material.prismarine_, Texture.prismarine);
+		this.put(Material.red_nether_brick_, Texture.red_nether_bricks);
+
+
+		/*
 		this.skins.put(Material.sandstone,
 				this.createSkinTopBottom(Texture.sandstone_normal, Texture.sandstone_top, Texture.sandstone_normal));
-		this.put(Material.sandstone, Texture.sandstone_normal);
+		this.put(Material.sandstone, Texture.sandstone);
 		this.skins.put(Material.red_sandstone, this.createSkinTopBottom(Texture.red_sandstone_normal,
 				Texture.red_sandstone_top, Texture.red_sandstone_normal));
-		this.put(Material.red_sandstone_wall, Texture.red_sandstone_normal);
-		this.put(Material.end_stone_brick_, Texture.end_bricks);
-		this.put(Material.mossy_stone_brick_, Texture.stonebrick_mossy);
-		this.put(Material.mossy_cobblestone, Texture.cobblestone_mossy);
-		this.put(Material.prismarine, Texture.prismarine_rough);
-		this.put(Material.prismarine_brick_, Texture.prismarine_bricks);
-		this.put(Material.nether_brick_, Texture.nether_brick);
-		this.put(Material.red_nether_brick_, Texture.red_nether_brick);
-		this.put(Material.stone_bricks, Texture.stonebrick);
-		this.put(Material.stone_brick_, Texture.stonebrick);
-		this.put(Material.infested_stone_bricks, Texture.stonebrick);
-		this.put(Material.bricks, Texture.brick);
-		this.put(Material.oak_, Texture.planks_oak);
-		this.put(Material.dark_oak_, Texture.planks_big_oak);
-		this.put(Material.spruce_, Texture.planks_spruce);
-		this.put(Material.birch_, Texture.planks_birch);
-		this.put(Material.acacia_, Texture.planks_acacia);
+		
 		// exceptions
 
+		*/
 		// other material
-		this.put(Material.grass_block, this.createSkinTopBottom(Texture.grass_side, Texture.grass_top, Texture.dirt));
-		this.put(Material.podzol,
-				this.createSkinTopBottom(Texture.dirt_podzol_side, Texture.dirt_podzol_top, Texture.dirt));
-		this.put(Material.mycelium,
-				this.createSkinTopBottom(Texture.mycelium_side, Texture.mycelium_top, Texture.dirt));
-		this.put(Material.dirt_path,
-				this.createSkinTopBottom(Texture.dirt_path_side, Texture.dirt_path_top, Texture.dirt));
+		this.put(Material.grass_block, this.createSkinTopBottom(Texture.grass_block_side, Texture.grass_block_top, Texture.dirt));
+		this.put(Material.podzol, this.createSkinTopBottom(Texture.podzol_side, Texture.podzol_top, Texture.dirt));
+		this.put(Material.mycelium, this.createSkinTopBottom(Texture.mycelium_side, Texture.mycelium_top, Texture.dirt));
+		this.put(Material.dirt_path, this.createSkinTopBottom(Texture.dirt_path_side, Texture.dirt_path_top, Texture.dirt));
 
-		this.put(Material.packed_ice, Texture.packed_ice);
-		this.put(Material.snow_block, Texture.snow);
+		//this.put(Material.snow_block, Texture.snow);
 
-		this.put(Material.chiseled_stone_bricks, Texture.stonebrick_carved);
-		this.put(Material.cracked_stone_bricks, Texture.stonebrick_cracked);
+		this.put(Material.sandstone, this.createSkinTopBottom(Texture.sandstone, Texture.sandstone_top, Texture.sandstone_bottom));
+		this.put(Material.cut_sandstone, this.createSkin(Texture.cut_sandstone, Texture.sandstone_top));
+		this.put(Material.chiseled_sandstone, this.createSkin(Texture.chiseled_sandstone, Texture.sandstone_top));
+		this.put(Material.smooth_sandstone, Texture.sandstone_top);
 
-		this.put(Material.polished_andesite, Texture.stone_andesite_smooth);
-		this.put(Material.polished_diorite, Texture.stone_diorite_smooth);
-		this.put(Material.polished_granite, Texture.stone_granite_smooth);
+		this.put(Material.red_sandstone_wall, this.createSkinTopBottom(Texture.red_sandstone, Texture.red_sandstone_top, Texture.red_sandstone_bottom));
+		this.put(Material.red_sandstone, this.createSkinTopBottom(Texture.red_sandstone, Texture.red_sandstone_top, Texture.red_sandstone_bottom));
+		this.put(Material.cut_red_sandstone, this.createSkin(Texture.cut_red_sandstone, Texture.red_sandstone_top));
+		this.put(Material.chiseled_red_sandstone, this.createSkin(Texture.chiseled_red_sandstone, Texture.red_sandstone_top));
+		this.put(Material.smooth_red_sandstone, Texture.red_sandstone_top);
 
-		this.put(Material.cut_sandstone, this.createSkin(Texture.sandstone_smooth, Texture.sandstone_top));
-		this.put(Material.chiseled_sandstone, this.createSkin(Texture.sandstone_carved, Texture.sandstone_top));
-		this.put(Material.smooth_sandstone, this.createSkin(Texture.sandstone_smooth, Texture.sandstone_top));
-
-		this.put(Material.red_sandstone, this.createSkin(Texture.red_sandstone_normal, Texture.red_sandstone_top));
-		this.put(Material.cut_red_sandstone, this.createSkin(Texture.red_sandstone_smooth, Texture.red_sandstone_top));
-		this.put(Material.chiseled_red_sandstone,
-				this.createSkin(Texture.red_sandstone_carved, Texture.red_sandstone_top));
-		this.put(Material.smooth_red_sandstone, this.createSkin(Texture.red_sandstone_smooth, Texture.sandstone_top));
-
+		this.put(Material.heavy_weighted_pressure_plate, Texture.iron_block);
+		this.put(Material.light_weighted_pressure_plate, Texture.gold_block);
 		this.put(Material.purpur_pillar, this.createSkin(Texture.purpur_pillar, Texture.purpur_pillar_top));
 
 		this.put(Material.bone_block, this.createSkin(Texture.bone_block_side, Texture.bone_block_top));
 
-		this.put(Material.nether_quartz_ore, Texture.quartz_ore);
 		this.put(Material.quartz_, Texture.quartz_block_side);
-		this.put(Material.quartz_block, this.createSkinTopBottom(Texture.quartz_block_side, Texture.quartz_block_top,
-				Texture.quartz_block_bottom));
-		this.put(Material.chiseled_quartz_block,
-				this.createSkin(Texture.quartz_block_chiseled, Texture.quartz_block_chiseled_top));
-		this.put(Material.quartz_pillar, this.createSkin(Texture.quartz_block_lines, Texture.quartz_block_lines_top));
+
+		this.put(Material.quartz_block, this.createSkinTopBottom(Texture.quartz_block_side, Texture.quartz_block_top, Texture.quartz_block_bottom));
+		this.put(Material.chiseled_quartz_block, this.createSkin(Texture.chiseled_quartz_block, Texture.chiseled_quartz_block_top));
+		this.put(Material.quartz_pillar, this.createSkin(Texture.quartz_pillar, Texture.quartz_pillar_top));
 		this.put(Material.smooth_quartz, Texture.quartz_block_bottom);
 
 		this.put(Material.tnt, this.createSkinTopBottom(Texture.tnt_side, Texture.tnt_top, Texture.tnt_bottom));
@@ -214,43 +194,39 @@ public class Skins {
 		this.put(Material.lava, Texture.lava_still);
 		this.put(Material.magma_block, Texture.magma);
 
-		this.put(Material.spawner, Texture.mob_spawner);
-		this.put(Material.mossy_cobblestone, Texture.cobblestone_mossy);
-
 		this.put(Material.note_block, Texture.jukebox_side);
-		this.put(Material.jukebox,
-				this.createSkinTopBottom(Texture.jukebox_side, Texture.jukebox_top, Texture.jukebox_side));
-		this.put(Material.wet_sponge, Texture.sponge_wet);
+		this.put(Material.jukebox, this.createSkinTopBottom(Texture.jukebox_side, Texture.jukebox_top, Texture.jukebox_side));
 
 		this.put(Material.melon, this.createSkin(Texture.melon_side, Texture.melon_top));
-		this.put(Material.carved_pumpkin, this.createSkinTopFront(Texture.pumpkin_side, Texture.pumpkin_top,
-				Texture.pumpkin_face_off, Orientation.NORTH));
-		this.put(Material.jack_o_lantern, this.createSkinTopFront(Texture.pumpkin_side, Texture.pumpkin_top,
-				Texture.pumpkin_face_on, Orientation.NORTH));
+		this.put(Material.carved_pumpkin, this.createSkinTopFront(Texture.pumpkin_side, Texture.pumpkin_top, Texture.carved_pumpkin, Orientation.NORTH));
+		this.put(Material.jack_o_lantern, this.createSkinTopFront(Texture.pumpkin_side, Texture.pumpkin_top, Texture.jack_o_lantern, Orientation.NORTH));
 		this.put(Material.pumpkin, this.createSkin(Texture.pumpkin_side, Texture.pumpkin_top));
 
 		this.put(Material.dispenser, this.createSkinTopFront(Texture.furnace_side, Texture.furnace_top,
-				Texture.dispenser_front_horizontal, Orientation.NORTH));
+				Texture.dispenser_front, Orientation.NORTH));
 
 		this.put(Material.cactus, this.createSkin(Texture.cactus_side, Texture.cactus_top));
-		this.put(Material.slime_block, Texture.slime);
 		this.put(Material.crafting_table, this.createSkinTopFront(Texture.crafting_table_side,
 				Texture.crafting_table_top, Texture.crafting_table_front, Orientation.NORTH));
 		this.put(Material.furnace, this.createSkinTopFront(Texture.furnace_side, Texture.furnace_top,
 				Texture.furnace_front_on, Orientation.NORTH));
 
 		this.put(Material.end_portal_frame,
-				this.createSkinTopBottom(Texture.endframe_side, Texture.endframe_top, Texture.end_stone));
+				this.createSkinTopBottom(Texture.end_portal_frame_side, Texture.end_portal_frame_top, Texture.end_stone));
+
 		this.put(Material.redstone_lamp, Texture.redstone_lamp_on);
-		this.put(Material.wall_torch, Texture.torch_on);
-		this.put(Material.torch, Texture.torch_on);
+		this.put(Material.wall_torch, Texture.torch);
+		this.put(Material.torch, Texture.torch);
 
 		// temporary fixes
 		this.put(Material.campfire, Texture.magma);
 		this.put(Material.lantern, Texture.magma);
 		this.put(Material.blast_furnace, Texture.furnace_front_on);
+
+		// TODO: Create actioned block for side placement and extension of piston head
+		this.put(Material.piston, this.createSkinTopBottom(Texture.piston_side, Texture.piston_top, Texture.piston_bottom));
+		this.put(Material.sticky_piston, this.createSkinTopBottom(Texture.piston_side, Texture.piston_top_sticky, Texture.piston_bottom));
 		// this.put(Material.torch, Texture.magma);
-		*/
 
 		// special
 		this.skins.put(Blocks.get("sourcecraft:ramp"), PLAYER_CLIP);
