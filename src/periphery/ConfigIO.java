@@ -66,7 +66,7 @@ public class ConfigIO {
 				Loggger.log("No config at " + path + " found.");
 			}
 		} else {
-			config = Config.getDetaulftConfig();
+			config = Config.getDefaultConfig();
 		}
 		return config;
 	}

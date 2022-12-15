@@ -249,7 +249,7 @@ public class Config {
 				.getName());
 	}
 
-	public static Config getDetaulftConfig() {
+	public static Config getDefaultConfig() {
 		Config config = new Config();
 		config.games = SourceGame.createDefaults();
 		config.options.add(ConvertOption.create()
