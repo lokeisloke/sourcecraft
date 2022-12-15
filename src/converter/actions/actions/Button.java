@@ -6,6 +6,8 @@ import minecraft.Block;
 import minecraft.Position;
 import minecraft.Property;
 import vmfWriter.entity.solidEntity.FuncIllusionary;
+// Ideally this wound be turned into func_movelinear with func_button covering to trigger
+// For non-solid entities should replace FuncIllusionary with func_brush wish solidity set to never solid
 
 public class Button extends Action {
 	@Override

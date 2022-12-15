@@ -5,6 +5,7 @@ import java.util.Collection;
 import converter.actions.actions.Button;
 import converter.actions.actions.Cactus;
 import converter.actions.actions.Carpet;
+import converter.actions.actions.Snow;
 import converter.actions.actions.PressurePlate;
 import converter.actions.actions.Chest;
 import converter.actions.actions.DetailBlock;
@@ -72,6 +73,7 @@ public class CustomActionManager extends ActionManager {
 		this.actions.put(Material.fire, new Fire());
 		this.actions.put(Material._trapdoor, new Trapdoor());
 		this.actions.put(Material.ladder, new Ladder());
+		this.actions.put(Material.snow, new Snow());
 		this.actions.put(Material._carpet, new Carpet());
 		this.actions.put(Material._pressure_plate, new PressurePlate());
 		this.actions.put(Material._pane, new Pane());
