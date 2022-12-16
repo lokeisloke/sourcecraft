@@ -19,9 +19,12 @@ public class Snow extends Action {
 	}
 
 	private void addCuboid(Position position, Position end, Block block) {
+		int layers = Integer.parseInt(block.getProperties().get("layers"));
+		int layerOffset = 16 - (layers * 2);
+
 		Position startOffset, endOffset;
 		startOffset = new Position(0, 0, 0);
-		endOffset = new Position(0, 14, 0);
+		endOffset = new Position(0, layerOffset, 0);
 		int pixels = 16;
 		context.addSolidEntity(new FuncIllusionary(context.createCuboid(position, end, pixels, startOffset, endOffset, block)));
 	}
