@@ -3,13 +3,18 @@ package converter.actions;
 import java.util.Collection;
 
 import converter.actions.actions.Button;
+import converter.actions.actions.Sign;
 import converter.actions.actions.Cactus;
+import converter.actions.actions.Door;
+import converter.actions.actions.SlimeBlock;
 import converter.actions.actions.Carpet;
 import converter.actions.actions.Snow;
 import converter.actions.actions.PressurePlate;
 import converter.actions.actions.Chest;
 import converter.actions.actions.DetailBlock;
+import converter.actions.actions.EndPortalFrame;
 import converter.actions.actions.Fence;
+import converter.actions.actions.Wall;
 import converter.actions.actions.Fire;
 import converter.actions.actions.GrassPath;
 import converter.actions.actions.Ladder;
@@ -46,15 +51,14 @@ public class CustomActionManager extends ActionManager {
 
 		for (Material m : new Material[] { Material.fern, Material.grass, Material.dandelion, Material.poppy,
 				Material.brown_mushroom, Material.red_mushroom, Material.redstone_wire, Material.wheat,
-				Material.oak_door, Material.ladder, Material.rail, Material.oak_wall_sign, Material.lever,
-				Material.stone_pressure_plate, Material.iron_door, Material.oak_pressure_plate, Material.sugar_cane,
+				Material.rail, Material.lever,
+				Material.sugar_cane,
 				Material.sunflower, Material.cobweb, Material.detector_rail, Material.detector_rail, Material.fire,
-				Material.redstone_wall_torch, Material.redstone_torch, Material.stone_button, Material.tall_grass,
 				Material.tall_grass, Material.large_fern, Material.blue_orchid, Material.allium, Material.azure_bluet,
 				Material.red_tulip, Material.orange_tulip, Material.white_tulip, Material.pink_tulip,
 				Material.oxeye_daisy, Material.cornflower, Material.lily_of_the_valley, Material.wither_rose,
 				Material.lilac, Material.rose_bush, Material.peony, Material.sugar_cane, Material.seagrass,
-				Material.tall_seagrass, Material.sweet_berry_bush, Material._pressure_plate }) {
+				Material.tall_seagrass, Material.sweet_berry_bush }) {
 			this.actions.put(m, NoAction.INSTANCE);
 		}
 		for (Material m : new Material[] { Material._leaves, Material.glass, Material.ice }) {
@@ -65,8 +69,11 @@ public class CustomActionManager extends ActionManager {
 			this.actions.put(m, new Liquid());
 		}
 		this.actions.put(Material._fence, new Fence());
+		this.actions.put(Material._door, new Door());
+		this.actions.put(Material._wall, new Wall());
 		this.actions.put(Material._stairs, new Stairs());
 		this.actions.put(Material._slab, new Slab());
+		this.actions.put(Material._sign, new Sign());
 		this.actions.put(Material.torch, Torch.INSTANCE);
 		this.actions.put(Material.wall_torch, Torch.INSTANCE);
 		this.actions.put(Material.cactus, new Cactus());
@@ -81,6 +88,8 @@ public class CustomActionManager extends ActionManager {
 		this.actions.put(Material.chest, new Chest());
 		this.actions.put(Material._button, new Button());
 		this.actions.put(Material.dirt_path, new GrassPath());
+		this.actions.put(Material.slime_block, new SlimeBlock());
+		this.actions.put(Material.end_portal_frame, new EndPortalFrame());
 
 //		// tf2
 //		this.actions.put(Material.grass, new TallGrassTf2());
