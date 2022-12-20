@@ -1,5 +1,8 @@
 package converter.actions.actions;
 
+import java.util.Map;
+import basic.Loggger;
+
 import converter.Orientation;
 import converter.actions.Action;
 import converter.mapper.Mapper;
@@ -39,6 +42,13 @@ public class Fence extends Action {
 	}
 
 	private void addBeams(Position p, Position end, Block block, Position startOffset, Position endOffset) {
+		//Loggger.log("Adding beam for " + block.getName());
+		//Loggger.log("  Properties:");
+		//Map<String, String> properties = block.getProperties();
+		//for (String property : properties.keySet()) {
+		//	Loggger.log("    " + property + ": " + properties.get(property).toString());
+		//}
+
 		boolean north = block.getProperty(Property.north)
 				.equals("true");
 		boolean south = block.getProperty(Property.south)
@@ -47,6 +57,7 @@ public class Fence extends Action {
 				.equals("true");
 		boolean west = block.getProperty(Property.west)
 				.equals("true");
+
 		int parts = 16;
 		while (p.getY() <= end.getY()) {
 			if (east && west) {

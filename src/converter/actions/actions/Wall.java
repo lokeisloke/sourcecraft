@@ -35,8 +35,6 @@ public class Wall extends Action {
 	}
 
 	private void addPole(Position p, Position end, Block block, Position startOffset, Position endOffset) {
-		Loggger.log("Adding pole for " + block.getName());
-
 		boolean north = block.getProperty(Property.north)
 				.equals("low");
 		boolean south = block.getProperty(Property.south)
@@ -57,12 +55,12 @@ public class Wall extends Action {
 	}
 
 	private void addBeams(Position p, Position end, Block block, Position startOffset, Position endOffset) {
-		Loggger.log("Adding beam for " + block.getName());
-		Loggger.log("  Properties:");
-		Map<String, String> properties = block.getProperties();
-		for (String property : properties.keySet()) {
-			Loggger.log("    " + property + ": " + properties.get(property).toString());
-		}
+		//Loggger.log("Adding beam for " + block.getName());
+		//Loggger.log("  Properties:");
+		//Map<String, String> properties = block.getProperties();
+		//for (String property : properties.keySet()) {
+		//	Loggger.log("    " + property + ": " + properties.get(property).toString());
+		//}
 
 		boolean north = block.getProperty(Property.north)
 				.equals("low");

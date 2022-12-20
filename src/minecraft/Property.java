@@ -7,8 +7,10 @@ public enum Property implements NameSupplier {
 	half,
 	face,
 	facing,
+	hinge,
 	north,
 	open,
+	powered,
 	shape,
 	south,
 	type,
@@ -23,7 +25,14 @@ public enum Property implements NameSupplier {
 	public enum Half implements NameSupplier {
 		top,
 		bottom,
+		upper,
+		lower,
 		double$;
+	}
+
+	public enum Hinge implements NameSupplier {
+		left,
+		right
 	}
 
 	public enum Face implements NameSupplier {
@@ -45,6 +54,11 @@ public enum Property implements NameSupplier {
 	}
 
 	public enum Open implements NameSupplier {
+		true$,
+		false$;
+	}
+
+	public enum Powered implements NameSupplier {
 		true$,
 		false$;
 	}

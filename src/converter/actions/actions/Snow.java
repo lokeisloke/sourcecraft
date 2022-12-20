@@ -26,6 +26,10 @@ public class Snow extends Action {
 		startOffset = new Position(0, 0, 0);
 		endOffset = new Position(0, layerOffset, 0);
 		int pixels = 16;
-		context.addSolidEntity(new FuncIllusionary(context.createCuboid(position, end, pixels, startOffset, endOffset, block)));
+		if (layers > 1) {
+			context.addDetail(context.createCuboid(position, end, pixels, startOffset, endOffset, block));
+		} else {
+			context.addSolidEntity(new FuncIllusionary(context.createCuboid(position, end, pixels, startOffset, endOffset, block)));
+		}
 	}
 }

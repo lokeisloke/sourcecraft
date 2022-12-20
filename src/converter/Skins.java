@@ -107,12 +107,16 @@ public class Skins {
 			String name = material.name();
 			if (name.endsWith("_log")) {
 				this.put(material, this.createSkin(() -> name, () -> name + "_top"));
+			} else if (name.endsWith("_stem")) {
+				this.put(material, this.createSkin(() -> name, () -> name + "_top"));
+			} else if (name.endsWith("_door")) {
+				this.put(material, name + "_top");
 			} else if (name.endsWith("_wood")) {
 				this.put(material, name.substring(0, name.length() - "_wood".length()) + "_log");
 			} else if (name.endsWith("_carpet")) {
 				this.put(material, name.substring(0, name.length() - "_carpet".length()) + "_wool");
-			//} else if (name.endsWith("_pressure_plate")) {
-				//this.put(material, name.substring(0, name.length() - "_pressure_plate".length()) + "_wool");
+			} else if (name.startsWith("infested_")) {
+				this.put(material, name.substring("infested_".length(), name.length()));
 			} else if (name.equals("chest")) {
 				this.put(material, this.createSkinTopFront(() -> "chest_side", () -> "chest_top", () -> "chest_front",
 						Orientation.NORTH));
@@ -122,7 +126,6 @@ public class Skins {
 		// material-prefixes
 		this.put(Material.brick_, Texture.bricks);
 		this.put(Material.petrified_oak_, Texture.oak_planks);
-		this.put(Material.infested_stone_bricks, Texture.stone_bricks);
 
 		this.put(Material.end_stone_brick_, Texture.end_stone_bricks);
 		this.put(Material.mossy_stone_brick_, Texture.mossy_stone_bricks);
@@ -138,6 +141,24 @@ public class Skins {
 		this.put(Material.purpur_, Texture.purpur_block);
 		this.put(Material.prismarine_, Texture.prismarine);
 		this.put(Material.red_nether_brick_, Texture.red_nether_bricks);
+		this.put(Material.crimson_, Texture.crimson_planks);
+		this.put(Material.warped_, Texture.warped_planks);
+
+		this.put(Material.cut_copper_, Texture.cut_copper);
+		this.put(Material.exposed_, Texture.exposed_copper);
+		this.put(Material.exposed_cut, Texture.exposed_cut_copper);
+		this.put(Material.oxidized_, Texture.oxidized_copper);
+		this.put(Material.oxidized_cut, Texture.oxidized_cut_copper);
+		this.put(Material.weathered_, Texture.weathered_copper);
+		this.put(Material.weathered_cut, Texture.weathered_cut_copper);
+		this.put(Material.waxed_copper_block, Texture.copper_block);
+		this.put(Material.waxed_cut_, Texture.cut_copper);
+		this.put(Material.waxed_exposed_, Texture.exposed_copper);
+		this.put(Material.waxed_exposed_cut, Texture.exposed_cut_copper);
+		this.put(Material.waxed_oxidized_, Texture.oxidized_copper);
+		this.put(Material.waxed_oxidized_cut, Texture.oxidized_cut_copper);
+		this.put(Material.waxed_weathered_, Texture.weathered_copper);
+		this.put(Material.waxed_weathered_cut, Texture.weathered_cut_copper);
 
 
 		/*
@@ -194,6 +215,8 @@ public class Skins {
 		this.put(Material.lava, Texture.lava_still);
 		this.put(Material.magma_block, Texture.magma);
 
+		this.put(Material.honey_block, this.createSkinTopBottom(Texture.honey_block_side, Texture.honey_block_top, Texture.honey_block_bottom));
+
 		this.put(Material.note_block, Texture.jukebox_side);
 		this.put(Material.jukebox, this.createSkinTopBottom(Texture.jukebox_side, Texture.jukebox_top, Texture.jukebox_side));
 
@@ -209,10 +232,28 @@ public class Skins {
 		this.put(Material.crafting_table, this.createSkinTopFront(Texture.crafting_table_side,
 				Texture.crafting_table_top, Texture.crafting_table_front, Orientation.NORTH));
 		this.put(Material.furnace, this.createSkinTopFront(Texture.furnace_side, Texture.furnace_top,
-				Texture.furnace_front_on, Orientation.NORTH));
+				Texture.furnace_front, Orientation.NORTH));
 
 		this.put(Material.end_portal_frame,
 				this.createSkinTopBottom(Texture.end_portal_frame_side, Texture.end_portal_frame_top, Texture.end_stone));
+		
+		this.put(Material.dried_kelp_block, this.createSkinTopBottom(Texture.dried_kelp_side, Texture.dried_kelp_top, Texture.dried_kelp_bottom));
+		this.put(Material.loom, this.createSkinTopFrontBottom(Texture.loom_side, Texture.loom_top, Texture.loom_front, Texture.loom_bottom, Orientation.NORTH));
+		this.put(Material.cartography_table, this.createSkinTopFront(Texture.cartography_table_side2, Texture.cartography_table_top, Texture.cartography_table_side1, Orientation.NORTH));
+		this.put(Material.fletching_table, this.createSkinTopFront(Texture.fletching_table_side, Texture.fletching_table_top, Texture.fletching_table_front, Orientation.NORTH));
+		this.put(Material.smithing_table, this.createSkinTopFrontBottom(Texture.smithing_table_side, Texture.smithing_table_top, Texture.smithing_table_front, Texture.smithing_table_bottom));
+		this.put(Material.target, this.createSkin(Texture.target_side, Texture.target_top));
+		this.put(Material.moss_carpet, Texture.moss_block);
+		this.put(Material.lodestone, this.createSkin(Texture.lodestone_side, Texture.lodestone_top));
+		this.put(Material.respawn_anchor, this.createSkinTopBottom(Texture.respawn_anchor_side0, Texture.respawn_anchor_top_off, Texture.respawn_anchor_bottom));
+
+		this.put(Material.ancient_debris, this.createSkin(Texture.ancient_debris_side, Texture.ancient_debris_top));
+		this.put(Material.basalt, this.createSkin(Texture.basalt_side, Texture.basalt_top));
+		this.put(Material.polished_basalt, this.createSkin(Texture.polished_basalt_side, Texture.polished_basalt_top));
+
+		this.put(Material.bee_nest, this.createSkinTopFrontBottom(Texture.bee_nest_side, Texture.bee_nest_top, Texture.bee_nest_front, Texture.bee_nest_bottom));
+		this.put(Material.beehive, this.createSkinTopFront(Texture.beehive_side, Texture.beehive_end, Texture.beehive_front, Orientation.NORTH));
+
 
 		this.put(Material.redstone_lamp, Texture.redstone_lamp_on);
 		this.put(Material.wall_torch, Texture.torch);
@@ -226,7 +267,6 @@ public class Skins {
 		// TODO: Create actioned block for side placement and extension of piston head
 		this.put(Material.piston, this.createSkinTopBottom(Texture.piston_side, Texture.piston_top, Texture.piston_bottom));
 		this.put(Material.sticky_piston, this.createSkinTopBottom(Texture.piston_side, Texture.piston_top_sticky, Texture.piston_bottom));
-		// this.put(Material.torch, Texture.magma);
 
 		// special
 		this.skins.put(Blocks.get("sourcecraft:ramp"), PLAYER_CLIP);

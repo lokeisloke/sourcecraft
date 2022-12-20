@@ -7,6 +7,7 @@ import converter.actions.actions.Sign;
 import converter.actions.actions.Cactus;
 import converter.actions.actions.Door;
 import converter.actions.actions.SlimeBlock;
+import converter.actions.actions.HoneyBlock;
 import converter.actions.actions.Carpet;
 import converter.actions.actions.Snow;
 import converter.actions.actions.PressurePlate;
@@ -89,6 +90,7 @@ public class CustomActionManager extends ActionManager {
 		this.actions.put(Material._button, new Button());
 		this.actions.put(Material.dirt_path, new GrassPath());
 		this.actions.put(Material.slime_block, new SlimeBlock());
+		this.actions.put(Material.honey_block, new HoneyBlock());
 		this.actions.put(Material.end_portal_frame, new EndPortalFrame());
 
 //		// tf2

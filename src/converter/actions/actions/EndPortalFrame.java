@@ -19,9 +19,9 @@ public class EndPortalFrame extends Action {
 	public void add(Mapper context, Position p, Block material) {
 		Position end = context.getCuboidFinder()
 				.getBestXZ(p, material);
-		int parts = 4;
+		int parts = 16;
 		Position offset = new Position(0, 0, 0);
-		Position negativeOffset = new Position(0, 1, 0);
+		Position negativeOffset = new Position(0, 3, 0);
 		context.addDetail(context.createCuboid(p, end, parts, offset, negativeOffset, material));
 		context.markAsConverted(p, end);
 	}
